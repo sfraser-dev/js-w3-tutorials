@@ -1,5 +1,3 @@
-function myExternalFunc(myElement) {
+export function myExternalFunc(myElement) {
     document.getElementById(myElement).innerHTML = "hi from external JS file";
 }
-
-
