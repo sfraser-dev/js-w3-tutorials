@@ -82,17 +82,105 @@
             age: 35,
             eyeColor: "blue",
 
-            fullName: function() {
+            fullName: function () {
                 return this.firstName + " " + this.lastName;
             }
         };
-    
+
         document.getElementById('pObjectJSON').innerHTML = "Object with method: Hi, I'm " + person.fullName()
             + ". Called without a button";
     </script>
+    <hr>
 
+    <button type="button" onclick="this.innerHTML='changing my own innerHTML using this keyword'">Click to change this
+        text</button>
+    <hr>
 
+    <p id="pStr1">W3Schools is the most bestist (string replace)</p>
+    <script>
+        function strReplace1(theID) {
+            let text = document.getElementById(theID).innerHTML;
+            let newText = text.replace('bestist', 'BESTIST');
+            document.getElementById(theID).innerHTML = newText;
+        }
+    </script>
+    <button type="button" onclick="strReplace1('pStr1')">(string replace 'bestist')</button>
+    <hr>
 
+    <p id="pStrInc">Does this text include the word Dogs?</p>
+    <p id="pStrInc2">mmm</p>
+    <script>
+        let theText = document.getElementById('pStrInc').innerHTML;
+        let trueOrFalse = theText.includes("Dogs");
+        document.getElementById('pStrInc2').innerHTML = trueOrFalse;
+    </script>
+    <hr>
+
+    <p id="pTemplateLiteral1"></p>
+    <script>
+        let firstName = "John";
+        let lastName = "Doe";
+        let fullName = `His full-name is ${firstName} ${lastName} (created from Template Literal)`;
+        document.getElementById("pTemplateLiteral1").innerHTML = fullName;
+    </script>
+    <hr>
+
+    <p>Creating HTML content from script using Template Literals</p>
+    <p id="pTemplateLiteral2"></p>
+    <script>
+        let text1 = "blah blah 1";
+        let text2 = "blah blah 2";
+        myCode = `<ul><li>${text1}</li><li>${text2}</li></ul>`;
+        document.getElementById('pTemplateLiteral2').innerHTML = myCode;
+    </script>
+    <hr>
+
+    <p>Array (print to 'p' element)</p>
+    <p id="pArray1"></p>
+    <script>
+        let str1 = "|";
+        const arr1 = ["Audi", "Volvo", "Fiat"];
+        for (i of arr1) {
+            str1 = str1 + i + "| ";
+        }
+        document.getElementById('pArray1').innerHTML = str1;
+    </script>
+
+    <p>Array print to 'p' element (using different for loop)</p>
+    <p id="pArray2"></p>
+    <script>
+        let str2 = "|";
+        const arr2 = ["Liverpool", "Arsenal", "Villa"];
+        for (let i = 0; i < arr2.length; i++) {
+            str2 = str2 + arr2[i] + "| ";
+        }
+        document.getElementById('pArray2').innerHTML = str2;
+       
+        // push onto array
+        function myPushFunction() {
+            // str2 and arr2 from above "block" can be seen in this block
+            str2="|";
+            arr2.push("Chelsea");
+            for (let i = 0; i < arr2.length; i++) {
+                str2 = str2 + arr2[i] + "| ";
+            }
+            document.getElementById('pArray2').innerHTML = str2;
+        }
+
+        // pop off end of array
+        function myPopFunction(){
+            // str2 and arr2 from above "block" can be seen in this block
+            arr2.pop();
+            str2="|";
+            for (let i = 0; i < arr2.length; i++) {
+                str2 = str2 + arr2[i] + "| ";
+            }
+            document.getElementById('pArray2').innerHTML = str2;
+        }
+    </script>
+    <button type="button" onclick="myPushFunction()">Push new item onto the football array</button><br>
+    <button type="button" onclick="myPopFunction()">Pop item off the football array</button>
+    <hr>
 </body>
 
 </html>
