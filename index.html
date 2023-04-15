@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+
+    <!-- Simple JS function in head -->
+    <script>
+        function myFirstHeadFunc() {
+            document.getElementById('pHeaderScript').innerHTML = '.. and end up like this';
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Hello World button -->
+    <button type="button" onclick="document.getElementById('pMyFirstButton').innerHTML='hihihi'">Hello World</button>
+    <p id="pMyFirstButton"></p>
+    <hr>
+
+    <!-- Date and time button -->
+    <button type="button" onclick="document.getElementById('pTheTime').innerHTML = Date()">The time and date is
+    </button>
+    <p id="pTheTime"></p>
+    <hr>
+
+    <!-- Lightbulb on off buttons -->
+    <button type="button" onclick="document.getElementById('img-bulb').src='./images/bulbon.png'">Bulb on</button>
+    <button type="button" onclick="document.getElementById('img-bulb').src='./images/bulboff.png'">Bulb off</button>
+    <img id="img-bulb" src="./images/bulboff.png" alt="bulb image">
+    <hr>
+
+    <!-- Change CSS styling of <p> button -->
+    <button type="button" onclick="document.getElementById('pStyling').style.fontSize='40px'">Big text</button>
+    <p id="pStyling">JS can change CSS properties</p>
+    <hr>
+
+    <!-- Hide text button -->
+    <button type="button" onclick="getElementById('pTextToHide').style.display='none'">Hide text</button>
+    <!-- <button type="button" onclick="getElementById('pTextToHide').innerHTML=''">Hide text</button> -->
+    <p id="pTextToHide">Please do make me disappear!</p>
+    <hr>
+
+    <!-- Show text button -->
+    <button type="button" onclick="getElementById('pImBack').style.display='block'">Show text</button>
+    <p id="pImBack" style="display:none">Yeah, I'm back again</p>
+    <hr>
+
+    <!-- call JS function in <head> -->
+    <button type="button" onclick="myFirstHeadFunc()">Change from head</button>
+    <p id="pHeaderScript">I start off like this..</p>
+    <hr>
+
+    <!-- Call JS function from external file -->
+    <script src="./js/single-function.js"></script>
+    <button type="button" onclick="myExternalFunc('pExternalScript')">Let's go external</button>
+    <p id="pExternalScript">can external JS change me?</p>
+    <hr>
+
+    <!-- 1. OUTPUTSs: output to HTML element -->
+    <p id="pOutput"></p>
+    <script>document.getElementById('pOutput').innerHTML = "1: I'm an example of output to a 'p' element"</script>
+    <!-- 2. OUTPUTs: output to this document (for testing only) -->
+    <button type="button" onclick="document.writeln(5+6)">2: document . write DON'T USE, need to restart browser!
+    </button>
+    <!-- 3. OUTPUTs: output to window dialog -->
+    <script>window.alert("hello world")</script><br>
+    <button type="button" onclick="alert('hello world2')">3: Alert - pop-up!</button>
+    <!-- 4. OUTPUTs: output to browser console -->
+    <script>console.log("hello world 3")</script><br>
+    <button type="button" onclick="console.log('hello world3')">4: Writing to browser console</button>
+    <hr>
+
+    <p id="pObjectJSON"></p>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 35,
+            eyeColor: "blue",
+
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+    
+        document.getElementById('pObjectJSON').innerHTML = "Object with method: Hi, I'm " + person.fullName()
+            + ". Called without a button";
+    </script>
+
+
+
+</body>
+
+</html>
