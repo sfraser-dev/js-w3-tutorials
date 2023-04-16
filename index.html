@@ -181,6 +181,34 @@
     <button type="button" onclick="myPushFunction()">Push new item onto the football array</button><br>
     <button type="button" onclick="myPopFunction()">Pop item off the football array</button>
     <hr>
+
+    <p id="pArrBefore"></p>
+    <p id="pArrSortDefault"></p>
+    <p id="pArrSortedNumericallyInlineArrow"></p>
+    <script>
+        const myArr = [14000, 104, 99];
+        document.getElementById('pArrBefore').innerHTML = "Original array: " + myArr;
+        document.getElementById('pArrSortDefault').innerHTML =
+            "Default sorted array (alphabetically sorted): " + myArr.sort();
+        document.getElementById('pArrSortedNumericallyInlineArrow').innerHTML =
+            "Array sorted via inline arrow sort: " + myArr.sort((a,b) => a-b);
+    </script>
+    <hr>
+
+    <p id="pForEach1"></p>
+    <p id="pForEach2"></p>
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+        let txt = "";
+        numbers.forEach(myFunc);
+
+        function myFunc(value, index, arr) {
+            txt = txt + "<li> " + index + ": " + value + "</li>" 
+        }
+
+        document.getElementById("pForEach1").innerHTML = numbers + " .forEach(myFunc) iterate..";
+        document.getElementById("pForEach2").innerHTML = "<ul>" + txt + "</ul>";
+    </script>
 </body>
 
 </html>
