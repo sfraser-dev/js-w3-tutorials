@@ -55,7 +55,8 @@
     <hr>
 
     <!-- Call JS function from external file -->
-    <script src="./js/testing.js"></script>
+    <script type="module" src="./js/testing.js"></script>
+    <!-- import {myExternalFunc} from "./js/testing.js"; -->
     <button type="button" onclick="myExternalFunc('pExternalScript')">Let's go external</button>
     <p id="pExternalScript">can external JS change me?</p>
     <hr>
@@ -198,6 +199,7 @@
     <p id="pForEach1"></p>
     <p id="pForEach2"></p>
     <script>
+        "use strict";
         const numbers = [45, 4, 9, 16, 25];
         let txt = "";
         numbers.forEach(myFunc);
@@ -208,6 +210,14 @@
 
         document.getElementById("pForEach1").innerHTML = numbers + " .forEach(myFunc) iterate..";
         document.getElementById("pForEach2").innerHTML = "<ul>" + txt + "</ul>";
+    </script>
+    <hr>
+
+    <p id="pDebug"></p>
+    <script>
+        let x = 5*15;
+        debugger;
+        document.getElementById("pDebug").innerHTML = "Debugger switched on: x =  " + x;
     </script>
 </body>
 
